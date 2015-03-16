@@ -12,40 +12,14 @@
     </style>
     <script>
       function TripController($scope) {
-        var socket = io.connect();
 
         $scope.trips = [];
-        $scope.roster = [];
         $scope.id = '';
         $scope.user = '';
         $scope.start = '';
         $scope.end = '';
         $scope.destination = '';
         $scope.price = '';
-
-        socket.on('connect', function () {
-          $scope.setName();
-        });
-
-        socket.on('trip', function (trip) {
-          $scope.trips.push(trip);
-          $scope.$apply();
-        });
-
-        socket.on('roster', function (names) {
-          $scope.roster = names;
-          $scope.$apply();
-        });
-
-        $scope.send = function send() {
-          console.log('Sending message:', $scope.destination);
-          socket.emit('trip', $scope.destination);
-          $scope.text = '';
-        };
-
-        $scope.setName = function setName() {
-          socket.emit('identify', $scope.name);
-        };
       }
     </script>
   </head>
