@@ -9,3 +9,7 @@ db.trips.insert([
 {user: "vver", from:"Bryne", to:"Forus", role:"Driver", start: "2015-04-23T18:25:43.511Z"},
 {user: "inod", from:"Sandnes", to:"Forus", role:"Passenger", start: "2015-05-12T18:25:43.511Z"},
 ]);
+
+
+GIT
+git reset --hard HEAD
