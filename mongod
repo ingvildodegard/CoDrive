@@ -1,1 +1,11 @@
 mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"
+
+db.users.insert([
+{user: "vver", first_name:"Vladimir", last_name:"Ver", email:"vver@statoil.com", phone: "12345678"},
+{user: "inod", first_name:"Ingvild", last_name:"Ødegård", email:"inod@statoil.com", phone: "45678"},
+]);
+
+db.trips.insert([
+{user: "vver", from:"Bryne", to:"Forus", role:"Driver", start: "2015-04-23T18:25:43.511Z"},
+{user: "inod", from:"Sandnes", to:"Forus", role:"Passenger", start: "2015-05-12T18:25:43.511Z"},
+]);

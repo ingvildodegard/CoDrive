@@ -1,10 +1,10 @@
 
 function UserController($scope){
-	$scope.trips = [];
+	$scope.users = [];
 	
-	$.getJSON('/db', function(data){
+	$.getJSON('/userdb', function(data){
 	     $.each(data, function(){
-	        $scope.trips.push(this);
+	        $scope.users.push(this);
             $scope.$apply();
 	     });
 	});

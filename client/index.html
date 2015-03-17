@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="page-header">
-        <h1><a href='/db'>Users</a></h1>
+        <h1><a href='/userdb'>Users</a></h1>
       </div>
       <div class="row">
         <div class="span16">
@@ -30,28 +30,62 @@
               <tr>
                 <th class="span1">Id</th>
                 <th class="span2">User</th>
-                <th class="span2">Start</th>
-                <th class="span2">End</th>
-                <th class="span7">Destination</th>
-                <th class="span2">Price</th>
+                <th class="span2">Firstname</th>
+                <th class="span2">Lastname</th>
+                <th class="span7">email</th>
+                <th class="span2">phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="user in users">
+                <td class="span1" ng-bind="user._id"></td>
+                <td class="span2" ng-bind="user.user"></td>
+                <td class="span2" ng-bind="user.first_name"></td>
+                <td class="span2" ng-bind="user.last_name"></td>
+                <td class="span2" ng-bind="user.email"></td>
+                <td class="span7" ng-bind="user.phone"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" ng-controller="TripController">
+      <div class="page-header">
+        <h1><a href='/tripdb'>Trip</a></h1>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th class="span1">Id</th>
+                <th class="span2">User</th>
+                <th class="span2">From</th>
+                <th class="span2">To</th>
+                <th class="span7">Time</th>
+                <th class="span2">Role</th>
               </tr>
             </thead>
             <tbody>
               <tr ng-repeat="trip in trips">
                 <td class="span1" ng-bind="trip._id"></td>
-                <td class="span2" ng-bind="trip.name"></td>
-                <td class="span2" ng-bind="trip.start"></td>
-                <td class="span2" ng-bind="trip.end"></td>
-                <td class="span7" ng-bind="trip.destination"></td>
-                <td class="span2" ng-bind="trip.price"></td>
+                <td class="span2" ng-bind="trip.user"></td>
+                <td class="span2" ng-bind="trip.from"></td>
+                <td class="span2" ng-bind="trip.to"></td>
+                <td class="span7" ng-bind="trip.start"></td>
+                <td class="span2" ng-bind="trip.role"></td>
               </tr>
             </tbody>
           </table>
-
-</script>
+        </div>
+      </div>
+    </div>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/scripts/controllers/users.js"></script>
+    <script src="/scripts/controllers/trips.js"></script>
   </body>
 </html>

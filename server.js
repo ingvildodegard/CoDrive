@@ -17,7 +17,7 @@ var server = http.createServer(router);
 router.use(express.static(path.resolve(__dirname, 'client')));
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://' + process.env.IP + '/trips', function (error) {
+mongoose.connect('mongodb://' + process.env.IP + '/codrive', function (error) {
     if (error) {
         console.log(error);
     }else{
@@ -29,17 +29,33 @@ mongoose.connect('mongodb://' + process.env.IP + '/trips', function (error) {
 var Schema = mongoose.Schema;
 var TripSchema = new Schema({
     user: String,
+    from: String,
+    to: String,
+    role: String,
+    start: String
+});
+
+var UserSchema = new Schema({
+    user: String,
     first_name: String,
     last_name: String,
-    destination: String,
-    price: String
+    email: String,
+    phone: String
 });
 
 // Mongoose Model definition
 var Trip = mongoose.model('trips', TripSchema);
+var User = mongoose.model('users', UserSchema);
 
-router.get('/db', function (req, res) {
+router.get('/tripdb', function (req, res) {
     Trip.find({}, function (err, docs) {
+        console.log(docs + " - > docs");
+        res.json(docs);
+    });
+});
+
+router.get('/userdb', function (req, res) {
+    User.find({}, function (err, docs) {
         console.log(docs + " - > docs");
         res.json(docs);
     });
