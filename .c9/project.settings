@@ -24,7 +24,14 @@
         "@path": "/.c9/runners",
         "configs": {
             "@inited": "true",
-            "json()": {}
+            "json()": {
+                "gitignore": {
+                    "command": "server.js",
+                    "debug": true,
+                    "name": "gitignore",
+                    "runner": "Node.js (default)"
+                }
+            }
         }
     },
     "share": {

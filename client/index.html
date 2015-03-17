@@ -10,21 +10,9 @@
         padding-top: 60px;
       }
     </style>
-    <script>
-      function TripController($scope) {
-
-        $scope.trips = [];
-        $scope.id = '';
-        $scope.user = '';
-        $scope.start = '';
-        $scope.end = '';
-        $scope.destination = '';
-        $scope.price = '';
-      }
-    </script>
   </head>
   <body>
-    <div class="container" ng-controller="TripController">
+    <div class="container" ng-controller="UserController">
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
           <div class="pull-right">
@@ -33,7 +21,7 @@
         </div>
       </div>
       <div class="page-header">
-        <h1><a href='/db'>Trips</a></h1>
+        <h1><a href='/db'>Users</a></h1>
       </div>
       <div class="row">
         <div class="span16">
@@ -51,7 +39,7 @@
             <tbody>
               <tr ng-repeat="trip in trips">
                 <td class="span1" ng-bind="trip._id"></td>
-                <td class="span2" ng-bind="trip.user"></td>
+                <td class="span2" ng-bind="trip.name"></td>
                 <td class="span2" ng-bind="trip.start"></td>
                 <td class="span2" ng-bind="trip.end"></td>
                 <td class="span7" ng-bind="trip.destination"></td>
@@ -64,5 +52,6 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
+    <script src="/scripts/controllers/users.js"></script>
   </body>
 </html>
