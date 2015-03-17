@@ -5,6 +5,8 @@ db.users.insert([
 {user: "inod", first_name:"Ingvild", last_name:"Ødegård", email:"inod@statoil.com", phone: "45678"},
 ]);
 
+user: "2vver", first_name:"2Vladimir", last_name:"2Ver", email:"2vver@statoil.com", phone: "12345678"
+
 db.trips.insert([
 {user: "vver", from:"Bryne", to:"Forus", role:"Driver", start: "2015-04-23T18:25:43.511Z"},
 {user: "inod", from:"Sandnes", to:"Forus", role:"Passenger", start: "2015-05-12T18:25:43.511Z"},

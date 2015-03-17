@@ -16,6 +16,9 @@ var server = http.createServer(router);
 
 router.use(express.static(path.resolve(__dirname, 'client')));
 
+var bodyParser = require('body-parser');
+router.use(bodyParser());
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.IP + '/codrive', function (error) {
     if (error) {
@@ -61,6 +64,19 @@ router.get('/userdb', function (req, res) {
     });
 });
 
+router.post('/adduser', function(req, res, next) {
+     var newUser = new User({
+        user:req.body.user,
+        first_name:req.body.first_name,
+        last_name:req.body.last_name,
+        email:req.body.email,
+        phone:req.body.phone
+    })
+    newUser.save(function (err, newUser) {
+    if (err) { return next(err) }
+        res.json(201, newUser)
+    });
+});
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
