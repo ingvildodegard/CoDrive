@@ -13,20 +13,20 @@
   </head>
   <body>
     <div class="container" ng-controller="TripController">
-        <div class="page-header">
+      <div class="page-header">
         <h1>Add trip</h1>
-          <div class="row">
-            <div class="span16">
-    				<input type="text" name="user" placeholder="User"/>
-    				<input type="text" name="from" placeholder="Travel from"/>
-    				<input type="text" name="to" placeholder="Travel to"/>
-    				<input type="date" name="start" placeholder="Date"/>
-    				<input type="time" name="time" placeholder="Time"/>
-    				<button ng-click="addtrip($index)"> Add </button>
-            </div>
+        <div class="row">
+          <div class="span16">
+    				<input ng-model="trip.user" placeholder="User"/>
+    				<input ng-model="trip.from" placeholder="Travel from"/>
+    				<input ng-model="trip.to" placeholder="Travel to"/>
+    				<input ng-model="trip.start" placeholder="Date"/>
+    				<input ng-model="trip.time" placeholder="Time"/>
+    				<button ng-click="addtrip(trip)"> Add </button>
+          </div>
         </div>
       </div>
-      </div>
+    </div>
     <div class="container" ng-controller="UserController">
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
