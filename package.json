@@ -9,7 +9,7 @@
     "async": "~0.2.8",
     "body-parser": "^1.12.2",
     "express": "~4.9.0",
-    "mongodb": "*",
+    "mongodb": "~1.4",
     "mongoskin": "*",
     "socket.io": "~0.9.14"
   }

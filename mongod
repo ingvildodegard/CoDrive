@@ -1,4 +1,7 @@
+mkdir data
 mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"
+
+Editer deretter i databasen ved å kjøre "mongo"
 
 db.users.insert([
 {user: "vver", first_name:"Vladimir", last_name:"Ver", email:"vver@statoil.com", phone: "12345678"},
