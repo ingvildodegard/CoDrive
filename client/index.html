@@ -12,6 +12,21 @@
     </style>
   </head>
   <body>
+    <div class="container" ng-controller="TripController">
+        <div class="page-header">
+        <h1>Add trip</h1>
+          <div class="row">
+            <div class="span16">
+    				<input type="text" name="user" placeholder="User"/>
+    				<input type="text" name="from" placeholder="Travel from"/>
+    				<input type="text" name="to" placeholder="Travel to"/>
+    				<input type="date" name="start" placeholder="Date"/>
+    				<input type="time" name="time" placeholder="Time"/>
+    				<button ng-click="addtrip($index)"> Add </button>
+            </div>
+        </div>
+      </div>
+      </div>
     <div class="container" ng-controller="UserController">
       <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
@@ -19,20 +34,6 @@
             <a href="https://github.com/ingvildodegard/CoDrive" class="brand">CoDrive</a>
           </div>
         </div>
-      </div>
-      <div class="container" ng-controller="AddTripController">
-        <div class="page-header">
-        <h1>Add trip</h1>
-      <div class="row">
-        <div class="span16">
-    				<input type="text" name="user" placeholder="User"/>
-    				<input type="text" name="from" placeholder="Travel from"/>
-    				<input type="text" name="to" placeholder="Travel to"/>
-    				<input type="date" name="start" placeholder="Date"/>
-    				<input type="time" name="time" placeholder="Time"/>
-    				<input type="submit" name="add" value="Add"/>
-        </div>
-      </div>
       </div>
       <div class="page-header">
         <h1><a href='/user/all'>Users</a></h1>
@@ -90,7 +91,7 @@
                 <td class="span2" ng-bind="trip.to"></td>
                 <td class="span7" ng-bind="trip.start"></td>
                 <td class="span2" ng-bind="trip.role"></td>
-                <td class="span2"> <input type="submit" name="add" value="Delete"/> </td>
+                <td class="span2"> <button ng-click="delete($index)"> Delete </button></td>
               </tr>
             </tbody>
           </table>

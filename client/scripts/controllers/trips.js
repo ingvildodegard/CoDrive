@@ -1,19 +1,22 @@
-function AddTripController($scope){
-/*	$.post('/trip/addtrip', $("data").serialize(),function(data){
-  //data contains the JSON object
-  //textStatus contains the status: success, error, etc
-	}, "json");*/
-};
-/*
-function DeleteTripController($scope){
- $scope.submit = function() {
- 	alert(this);
-      };
-};*/
-
 function TripController($scope){
 	$scope.date = new Date();
 	$scope.trips = [];
+	$scope.delete = function (idx) {
+        var i = $scope.trips[idx]; 
+        $.getJSON('/trip/deletetrip/'+i._id, function(data){
+        	$scope.trips.removeById(i._id);
+        	$scope.$digest();
+        });
+    };
+    
+    $scope.addtrip = function (idx) {
+      var i = $scope.trips[idx]; 
+        $.getJSON('/trip/deletetrip/'+i._id, function(data){
+        	$scope.trips.removeById(i._id);
+        	$scope.$digest();
+        });
+    };
+
 	$.getJSON('/trip/all', function(data){
 	     $.each(data, function(){
 	        $scope.trips.push(this);

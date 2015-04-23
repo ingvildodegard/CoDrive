@@ -20,7 +20,7 @@ router.get('/all', function (req, res) {
 
 router.post('/addtrip', function(req, res, next) {
    var db = req.db;
-   console.log("addtrip");
+   console.log("addtrip" + db.user);
     db.collection('trip').insert(req.body, function(err, result){
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
