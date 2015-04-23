@@ -8,8 +8,8 @@ var path = require('path');
 var express = require('express');
 var mongo = require('mongoskin');
 
-var trips = require('./server/routes/trips.js');
-var users = require('./server/routes/users.js');
+var trip = require('./server/routes/trip.js');
+var user = require('./server/routes/user.js');
 //
 // Creates a new instance of SimpleServer with the following options:
 //  * `port` - The HTTP port to listen on. If `process.env.PORT` is set, _it overrides this value_.
@@ -29,8 +29,8 @@ router.use(function(req,res,next){
     next();
 });
 
-router.use('/trips', trips);
-router.use('/users', users);
+router.use('/trip', trip);
+router.use('/user', user);
 
 server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
   var addr = server.address();
